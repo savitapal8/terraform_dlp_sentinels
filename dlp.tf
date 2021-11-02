@@ -20,7 +20,7 @@ resource "google_data_loss_prevention_job_trigger" "savita_demo_1" {
                 output_config {
                     table {
                         project_id = "xxxxxx-xxx-xxxxxxx"
-                        dataset_id = "dlp_demo"
+                        dataset_id = ""
                     }
                 }
             }
