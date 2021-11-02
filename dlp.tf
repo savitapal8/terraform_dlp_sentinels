@@ -9,7 +9,7 @@ resource "google_data_loss_prevention_job_trigger" "savita_demo_1" {
 
     triggers {
         schedule {
-            recurrence_period_duration = "86400s"
+            recurrence_period_duration = ""
         }
     }
 
