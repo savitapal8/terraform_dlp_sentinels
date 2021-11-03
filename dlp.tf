@@ -12,15 +12,15 @@ resource "google_data_loss_prevention_job_trigger" "savita_demo_1" {
             recurrence_period_duration = "86400s"
         }
     }
-
-    inspect_job {
+  
+  inspect_job {
         inspect_template_name = "dlp_demo"
         actions {
             save_findings {
                 output_config {
                     table {
                         project_id = "xxxxxx-xxx-xxxxxxx"
-                        dataset_id = "dlp_demo"
+                        dataset_id = ""
                     }
                 }
             }
@@ -33,4 +33,5 @@ resource "google_data_loss_prevention_job_trigger" "savita_demo_1" {
             }
         }
     }
+
 }
