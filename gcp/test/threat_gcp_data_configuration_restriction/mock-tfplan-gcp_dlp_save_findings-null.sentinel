@@ -1,0 +1,255 @@
+terraform_version = "1.0.10"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_data_loss_prevention_job_trigger.savita_demo_1": {
+			"address":        "google_data_loss_prevention_job_trigger.savita_demo_1",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "savita_demo_1",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_data_loss_prevention_job_trigger",
+			"values": {
+				"description":  "Description",
+				"display_name": "Displayname",
+				"inspect_job":  [],
+				"parent":       "airline1-sabre-wolverine",
+				"status":       "HEALTHY",
+				"timeouts":     null,
+				"triggers": [
+					{
+						"schedule": [
+							{
+								"recurrence_period_duration": "86400s",
+							},
+						],
+					},
+				],
+			},
+		},
+	},
+}
+
+variables = {
+	"access_token": {
+		"name":  "access_token",
+		"value": "REDACTED_SENSITIVE",
+	},
+}
+
+resource_changes = {
+	"google_data_loss_prevention_job_trigger.savita_demo_1": {
+		"address": "google_data_loss_prevention_job_trigger.savita_demo_1",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":  "Description",
+				"display_name": "Displayname",
+				"inspect_job":  [],
+				"parent":       "airline1-sabre-wolverine",
+				"status":       "HEALTHY",
+				"timeouts":     null,
+				"triggers": [
+					{
+						"schedule": [
+							{
+								"recurrence_period_duration": "86400s",
+							},
+						],
+					},
+				],
+			},
+			"after_unknown": {
+				"id":            true,
+				"inspect_job":   [],
+				"last_run_time": true,
+				"name":          true,
+				"triggers": [
+					{
+						"schedule": [
+							{},
+						],
+					},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "savita_demo_1",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_data_loss_prevention_job_trigger",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"expressions": {
+					"access_token": {
+						"references": [
+							"var.access_token",
+						],
+					},
+				},
+				"name": "google",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_data_loss_prevention_job_trigger.savita_demo_1",
+					"expressions": {
+						"description": {
+							"constant_value": "Description",
+						},
+						"display_name": {
+							"constant_value": "Displayname",
+						},
+						"parent": {
+							"constant_value": "airline1-sabre-wolverine",
+						},
+						"triggers": [
+							{
+								"schedule": [
+									{
+										"recurrence_period_duration": {
+											"constant_value": "86400s",
+										},
+									},
+								],
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "savita_demo_1",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_data_loss_prevention_job_trigger",
+				},
+			],
+			"variables": {
+				"access_token": {
+					"description": "access_token",
+					"sensitive":   true,
+				},
+			},
+		},
+	},
+	"format_version": "0.2",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_data_loss_prevention_job_trigger.savita_demo_1",
+					"mode":           "managed",
+					"name":           "savita_demo_1",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"inspect_job": [],
+						"triggers": [
+							{
+								"schedule": [
+									{},
+								],
+							},
+						],
+					},
+					"type": "google_data_loss_prevention_job_trigger",
+					"values": {
+						"description":  "Description",
+						"display_name": "Displayname",
+						"inspect_job":  [],
+						"parent":       "airline1-sabre-wolverine",
+						"status":       "HEALTHY",
+						"timeouts":     null,
+						"triggers": [
+							{
+								"schedule": [
+									{
+										"recurrence_period_duration": "86400s",
+									},
+								],
+							},
+						],
+					},
+				},
+			],
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_data_loss_prevention_job_trigger.savita_demo_1",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":  "Description",
+					"display_name": "Displayname",
+					"inspect_job":  [],
+					"parent":       "airline1-sabre-wolverine",
+					"status":       "HEALTHY",
+					"timeouts":     null,
+					"triggers": [
+						{
+							"schedule": [
+								{
+									"recurrence_period_duration": "86400s",
+								},
+							],
+						},
+					],
+				},
+				"after_sensitive": {
+					"inspect_job": [],
+					"triggers": [
+						{
+							"schedule": [
+								{},
+							],
+						},
+					],
+				},
+				"after_unknown": {
+					"id":            true,
+					"inspect_job":   [],
+					"last_run_time": true,
+					"name":          true,
+					"triggers": [
+						{
+							"schedule": [
+								{},
+							],
+						},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "savita_demo_1",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_data_loss_prevention_job_trigger",
+		},
+	],
+	"terraform_version": "1.0.10",
+	"variables": {
+		"access_token": {
+			"value": "REDACTED_SENSITIVE",
+		},
+	},
+}

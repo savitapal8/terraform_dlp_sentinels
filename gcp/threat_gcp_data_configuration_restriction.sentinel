@@ -1,0 +1,134 @@
+# This policy uses the Sentinel tfplan/v2 import to require that
+# all GCE resources following all the policies related to Job trigger
+
+import "strings"
+import "types"
+import "tfplan-functions" as plan
+import "generic-functions" as gen
+
+//**********************Variables to be used***********************************
+selected_node = null
+messages = {}
+
+//******Resource Types*********************************************************
+//******Job Trigger Param Map**************************************************
+resourceTypesDLPJTMap = {	
+	"google_data_loss_prevention_job_trigger": {
+		"key":   "triggers.0.schedule.0.recurrence_period_duration",
+	},
+
+}
+
+//******Save Findings Param Map*************************************************
+resourceTypesDLPSFMap = {	
+	"google_data_loss_prevention_job_trigger": {
+		"key":   "inspect_job.0.actions.0.save_findings.0.output_config.0.table.0.dataset_id",
+		"inspect_key" : "inspect_job",
+	},
+
+}
+//******************************************************************************
+
+//******Following function is being used to validate the DLP job triggers**
+//as per the GCP resource's requirement 
+//address is the key and rc is the value of resource_changes in the mock of tfplan-v2 file
+
+check_job_trigger = func(address, rc, resource) {
+
+	key = resourceTypesDLPJTMap[rc.type]["key"]
+	
+	selected_node = plan.evaluate_attribute(rc, key)
+	
+	if types.type_of(selected_node) is "null" {
+		return plan.to_string(address) + " does not have " + key +" defined"
+	} else {
+		
+		result = plan.filter_attribute_has_suffix(resource, key, "s", false)
+		
+		if selected_node is not "" and result.messages is not {}{
+			return null 
+		} else {
+			return plan.to_string(address) +  " recurrence_period_duration is not having valid input, please provide correctly"			
+		}
+	}
+}
+
+//******Following function is being used to validate the internal ip settings**
+//as per the GCP resource's requirement 
+//address is the key and rc is the value of resource_changes in the mock of tfplan-v2 file
+
+check_save_findings = func(address, rc) {
+
+	key = resourceTypesDLPSFMap[rc.type]["inspect_key"]
+	selected_node = plan.evaluate_attribute(rc, key)
+	
+	if selected_node is [] {
+		return plan.to_string(address) + " does not have " + key +" defined"
+	} else {
+
+		key = resourceTypesDLPSFMap[rc.type]["key"]
+		selected_node = plan.evaluate_attribute(rc, key)
+		
+		if selected_node is not ""{
+			return null
+		} else {
+			return plan.to_string(address) +  " dataset id is not having valid input, please provide correctly"			
+		}
+	}
+}
+
+//*******************validating recurrence period duration in triggers block only*******************************
+messages_trigger = {}
+
+for resourceTypesDLPJTMap as key_address, _ {
+	# Get all the instances on the basis of type
+	allResources = plan.find_resources(key_address)
+	for allResources as address, rc {
+		message = null
+		message = check_job_trigger(address, rc, {address : rc})
+
+		if types.type_of(message) is not "null" {
+
+			gen.create_sub_main_key_list(messages, messages_trigger, address)
+			
+			append(messages_trigger[address],message)
+			append(messages[address],message)
+		} 	
+	}
+}
+//*****************************************************************************
+
+//*******************validating internal ip only*******************************
+messages_save_findings = {}
+
+for resourceTypesDLPSFMap as key_address, _ {
+	# Get all the instances on the basis of type
+	allResources = plan.find_resources(key_address)
+	for allResources as address, rc {
+		message = null
+		message = check_save_findings(address, rc)
+
+		if types.type_of(message) is not "null" {
+
+			gen.create_sub_main_key_list(messages, messages_save_findings, address)
+			
+			append(messages_save_findings[address],message)
+			append(messages[address],message)
+		} 	
+	}
+}
+//*****************************************************************************
+
+
+GCP_DLP_TRIGGER = rule {
+ 	length(messages_trigger) is 0 
+}
+
+GCP_DLP_SAVEFINDINGS = rule {
+ 	length(messages_save_findings) is 0 
+}
+
+# Main rule
+print(messages)
+
+main = rule { GCP_DLP_TRIGGER and GCP_DLP_SAVEFINDINGS }

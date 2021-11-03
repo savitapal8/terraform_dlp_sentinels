@@ -1,5 +1,5 @@
 provider "google" {
-  access_token          = var.access_token
+access_token = var.access_token
 }
 
 resource "google_data_loss_prevention_job_trigger" "savita_demo_1" {

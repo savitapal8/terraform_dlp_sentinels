@@ -1,0 +1,615 @@
+terraform_version = "1.0.10"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_data_loss_prevention_job_trigger.savita_demo_1": {
+			"address":        "google_data_loss_prevention_job_trigger.savita_demo_1",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "savita_demo_1",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_data_loss_prevention_job_trigger",
+			"values": {
+				"description":  "Description",
+				"display_name": "Displayname",
+				"inspect_job": [
+					{
+						"actions": [
+							{
+								"save_findings": [
+									{
+										"output_config": [
+											{
+												"output_schema": null,
+												"table": [
+													{
+														"dataset_id": "dlp_demo",
+														"project_id": "xxxxxx-xxx-xxxxxxx",
+														"table_id":   null,
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"inspect_template_name": "dlp_demo",
+						"storage_config": [
+							{
+								"big_query_options": [],
+								"cloud_storage_options": [
+									{
+										"bytes_limit_per_file":         null,
+										"bytes_limit_per_file_percent": null,
+										"file_set": [
+											{
+												"regex_file_set": [],
+												"url":            "gs://my_bucket_df/",
+											},
+										],
+										"file_types":          null,
+										"files_limit_percent": null,
+										"sample_method":       null,
+									},
+								],
+								"datastore_options": [],
+								"timespan_config":   [],
+							},
+						],
+					},
+				],
+				"parent":   "airline1-sabre-wolverine",
+				"status":   "HEALTHY",
+				"timeouts": null,
+				"triggers": [
+					{
+						"schedule": [
+							{
+								"recurrence_period_duration": null,
+							},
+						],
+					},
+				],
+			},
+		},
+	},
+}
+
+variables = {
+	"access_token": {
+		"name":  "access_token",
+		"value": "REDACTED_SENSITIVE",
+	},
+}
+
+resource_changes = {
+	"google_data_loss_prevention_job_trigger.savita_demo_1": {
+		"address": "google_data_loss_prevention_job_trigger.savita_demo_1",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":  "Description",
+				"display_name": "Displayname",
+				"inspect_job": [
+					{
+						"actions": [
+							{
+								"save_findings": [
+									{
+										"output_config": [
+											{
+												"output_schema": null,
+												"table": [
+													{
+														"dataset_id": "dlp_demo",
+														"project_id": "xxxxxx-xxx-xxxxxxx",
+														"table_id":   null,
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"inspect_template_name": "dlp_demo",
+						"storage_config": [
+							{
+								"big_query_options": [],
+								"cloud_storage_options": [
+									{
+										"bytes_limit_per_file":         null,
+										"bytes_limit_per_file_percent": null,
+										"file_set": [
+											{
+												"regex_file_set": [],
+												"url":            "gs://my_bucket_df/",
+											},
+										],
+										"file_types":          null,
+										"files_limit_percent": null,
+										"sample_method":       null,
+									},
+								],
+								"datastore_options": [],
+								"timespan_config":   [],
+							},
+						],
+					},
+				],
+				"parent":   "airline1-sabre-wolverine",
+				"status":   "HEALTHY",
+				"timeouts": null,
+				"triggers": [
+					{
+						"schedule": [
+							{
+								"recurrence_period_duration": null,
+							},
+						],
+					},
+				],
+			},
+			"after_unknown": {
+				"id": true,
+				"inspect_job": [
+					{
+						"actions": [
+							{
+								"save_findings": [
+									{
+										"output_config": [
+											{
+												"table": [
+													{},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"storage_config": [
+							{
+								"big_query_options": [],
+								"cloud_storage_options": [
+									{
+										"file_set": [
+											{
+												"regex_file_set": [],
+											},
+										],
+									},
+								],
+								"datastore_options": [],
+								"timespan_config":   [],
+							},
+						],
+					},
+				],
+				"last_run_time": true,
+				"name":          true,
+				"triggers": [
+					{
+						"schedule": [
+							{},
+						],
+					},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "savita_demo_1",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_data_loss_prevention_job_trigger",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"expressions": {
+					"access_token": {
+						"references": [
+							"var.access_token",
+						],
+					},
+				},
+				"name": "google",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_data_loss_prevention_job_trigger.savita_demo_1",
+					"expressions": {
+						"description": {
+							"constant_value": "Description",
+						},
+						"display_name": {
+							"constant_value": "Displayname",
+						},
+						"inspect_job": [
+							{
+								"actions": [
+									{
+										"save_findings": [
+											{
+												"output_config": [
+													{
+														"table": [
+															{
+																"dataset_id": {
+																	"constant_value": "dlp_demo",
+																},
+																"project_id": {
+																	"constant_value": "xxxxxx-xxx-xxxxxxx",
+																},
+															},
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+								"inspect_template_name": {
+									"constant_value": "dlp_demo",
+								},
+								"storage_config": [
+									{
+										"cloud_storage_options": [
+											{
+												"file_set": [
+													{
+														"url": {
+															"constant_value": "gs://my_bucket_df/",
+														},
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"parent": {
+							"constant_value": "airline1-sabre-wolverine",
+						},
+						"triggers": [
+							{
+								"schedule": [
+									{},
+								],
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "savita_demo_1",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_data_loss_prevention_job_trigger",
+				},
+			],
+			"variables": {
+				"access_token": {
+					"description": "access_token",
+					"sensitive":   true,
+				},
+			},
+		},
+	},
+	"format_version": "0.2",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_data_loss_prevention_job_trigger.savita_demo_1",
+					"mode":           "managed",
+					"name":           "savita_demo_1",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"inspect_job": [
+							{
+								"actions": [
+									{
+										"save_findings": [
+											{
+												"output_config": [
+													{
+														"table": [
+															{},
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+								"storage_config": [
+									{
+										"big_query_options": [],
+										"cloud_storage_options": [
+											{
+												"file_set": [
+													{
+														"regex_file_set": [],
+													},
+												],
+											},
+										],
+										"datastore_options": [],
+										"timespan_config":   [],
+									},
+								],
+							},
+						],
+						"triggers": [
+							{
+								"schedule": [
+									{},
+								],
+							},
+						],
+					},
+					"type": "google_data_loss_prevention_job_trigger",
+					"values": {
+						"description":  "Description",
+						"display_name": "Displayname",
+						"inspect_job": [
+							{
+								"actions": [
+									{
+										"save_findings": [
+											{
+												"output_config": [
+													{
+														"output_schema": null,
+														"table": [
+															{
+																"dataset_id": "dlp_demo",
+																"project_id": "xxxxxx-xxx-xxxxxxx",
+																"table_id":   null,
+															},
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+								"inspect_template_name": "dlp_demo",
+								"storage_config": [
+									{
+										"big_query_options": [],
+										"cloud_storage_options": [
+											{
+												"bytes_limit_per_file":         null,
+												"bytes_limit_per_file_percent": null,
+												"file_set": [
+													{
+														"regex_file_set": [],
+														"url":            "gs://my_bucket_df/",
+													},
+												],
+												"file_types":          null,
+												"files_limit_percent": null,
+												"sample_method":       null,
+											},
+										],
+										"datastore_options": [],
+										"timespan_config":   [],
+									},
+								],
+							},
+						],
+						"parent":   "airline1-sabre-wolverine",
+						"status":   "HEALTHY",
+						"timeouts": null,
+						"triggers": [
+							{
+								"schedule": [
+									{
+										"recurrence_period_duration": null,
+									},
+								],
+							},
+						],
+					},
+				},
+			],
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_data_loss_prevention_job_trigger.savita_demo_1",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":  "Description",
+					"display_name": "Displayname",
+					"inspect_job": [
+						{
+							"actions": [
+								{
+									"save_findings": [
+										{
+											"output_config": [
+												{
+													"output_schema": null,
+													"table": [
+														{
+															"dataset_id": "dlp_demo",
+															"project_id": "xxxxxx-xxx-xxxxxxx",
+															"table_id":   null,
+														},
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+							"inspect_template_name": "dlp_demo",
+							"storage_config": [
+								{
+									"big_query_options": [],
+									"cloud_storage_options": [
+										{
+											"bytes_limit_per_file":         null,
+											"bytes_limit_per_file_percent": null,
+											"file_set": [
+												{
+													"regex_file_set": [],
+													"url":            "gs://my_bucket_df/",
+												},
+											],
+											"file_types":          null,
+											"files_limit_percent": null,
+											"sample_method":       null,
+										},
+									],
+									"datastore_options": [],
+									"timespan_config":   [],
+								},
+							],
+						},
+					],
+					"parent":   "airline1-sabre-wolverine",
+					"status":   "HEALTHY",
+					"timeouts": null,
+					"triggers": [
+						{
+							"schedule": [
+								{
+									"recurrence_period_duration": null,
+								},
+							],
+						},
+					],
+				},
+				"after_sensitive": {
+					"inspect_job": [
+						{
+							"actions": [
+								{
+									"save_findings": [
+										{
+											"output_config": [
+												{
+													"table": [
+														{},
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+							"storage_config": [
+								{
+									"big_query_options": [],
+									"cloud_storage_options": [
+										{
+											"file_set": [
+												{
+													"regex_file_set": [],
+												},
+											],
+										},
+									],
+									"datastore_options": [],
+									"timespan_config":   [],
+								},
+							],
+						},
+					],
+					"triggers": [
+						{
+							"schedule": [
+								{},
+							],
+						},
+					],
+				},
+				"after_unknown": {
+					"id": true,
+					"inspect_job": [
+						{
+							"actions": [
+								{
+									"save_findings": [
+										{
+											"output_config": [
+												{
+													"table": [
+														{},
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+							"storage_config": [
+								{
+									"big_query_options": [],
+									"cloud_storage_options": [
+										{
+											"file_set": [
+												{
+													"regex_file_set": [],
+												},
+											],
+										},
+									],
+									"datastore_options": [],
+									"timespan_config":   [],
+								},
+							],
+						},
+					],
+					"last_run_time": true,
+					"name":          true,
+					"triggers": [
+						{
+							"schedule": [
+								{},
+							],
+						},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "savita_demo_1",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_data_loss_prevention_job_trigger",
+		},
+	],
+	"terraform_version": "1.0.10",
+	"variables": {
+		"access_token": {
+			"value": "REDACTED_SENSITIVE",
+		},
+	},
+}
