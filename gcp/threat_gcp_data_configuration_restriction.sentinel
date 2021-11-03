@@ -11,7 +11,7 @@ selected_node = null
 messages = {}
 
 //******Resource Types*********************************************************
-//******Job Trigger Param Map**************************************************
+//******Job Trigger Param Map***
 resourceTypesDLPJTMap = {	
 	"google_data_loss_prevention_job_trigger": {
 		"key":   "triggers.0.schedule.0.recurrence_period_duration",
@@ -19,7 +19,7 @@ resourceTypesDLPJTMap = {
 
 }
 
-//******Save Findings Param Map*************************************************
+//******Save Findings Param Map***
 resourceTypesDLPSFMap = {	
 	"google_data_loss_prevention_job_trigger": {
 		"key":   "inspect_job.0.actions.0.save_findings.0.output_config.0.table.0.dataset_id",
@@ -43,12 +43,21 @@ check_job_trigger = func(address, rc, resource) {
 		return plan.to_string(address) + " does not have " + key +" defined"
 	} else {
 		
-		result = plan.filter_attribute_has_suffix(resource, key, "s", false)
+		result = strings.has_suffix(selected_node, "s")
+
+		min_val = 86400
+		max_val = 86400 * 60
 		
-		if selected_node is not "" and result.messages is not {}{
-			return null 
+		if selected_node is not "" and result is true {
+			str_value = strings.split(selected_node,"s")[0]
+			
+			if float(str_value) >= float(min_val) and float(str_value) <= float(max_val) {
+				return null 
+			} else {
+				return plan.to_string(address) +  " recurrence_period_duration must be set to a time duration greater than or equal to 1 day and can be no longer than 60 days."							
+			}
 		} else {
-			return plan.to_string(address) +  " recurrence_period_duration is not having valid input, please provide correctly"			
+			return plan.to_string(address) +  " recurrence_period_duration is not having valid input, please provide correctly"				
 		}
 	}
 }
