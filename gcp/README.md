@@ -5,7 +5,7 @@ In order to deploy DLP through terraform, below two policies need to be run succ
 * Enforce jobs to have a trigger to ensure they run automatically.
 * Enforce that all jobs save their findings into a BQ dataset.
 
-###threat_gcp_data_configuration_restriction.sentinel file is being used to have both policies as a code.
+### threat_gcp_data_configuration_restriction.sentinel file is being used to have both policies as a code.
 1. resourceTypesDLPJTMap
 2. resourceTypesDLPSFMap
 
