@@ -9,7 +9,8 @@
 ## Used Maps
 * resourceTypesDLPJTMap: This is the map, being used to have path of node for the respective gcp service for Job  Trigger policy. Here Key is having complete path of particular node.
 
-* resourceTypesDLPSFMap: This is the map, being used to have path of nodes for the respective gcp service for Save Finding policy. It is having two enteries with two keys "key" and "inspect_key". As per the policy, "inspect_job.0.actions.0.save_findings.0.output_config.0.table.0.dataset_id" needs to have appropriate value for the dataset_id.
+* resourceTypesDLPSFMap: This is the map, being used to have path of nodes for the respective gcp service for Save Finding policy. It is having two enteries with two keys "key" and "inspect_key". 
+As per the policy, "inspect_job.0.actions.0.save_findings.0.output_config.0.table.0.dataset_id" needs to have appropriate value for the dataset_id.
 As per terraform, inspect_job is not required section, so "inspect_job" & "dataset_id" both need to be validated for null/empty.
 
 ## Used Methods
