@@ -33,7 +33,7 @@ resourceTypesDLPSFMap = {
 //as per the GCP resource's requirement 
 //address is the key and rc is the value of resource_changes in the mock of tfplan-v2 file
 
-check_job_trigger = func(address, rc, resource) {
+check_job_trigger = func(address, rc) {
 
 	key = resourceTypesDLPJTMap[rc.type]["key"]
 	
@@ -94,7 +94,7 @@ for resourceTypesDLPJTMap as key_address, _ {
 	allResources = plan.find_resources(key_address)
 	for allResources as address, rc {
 		message = null
-		message = check_job_trigger(address, rc, {address : rc})
+		message = check_job_trigger(address, rc)
 
 		if types.type_of(message) is not "null" {
 

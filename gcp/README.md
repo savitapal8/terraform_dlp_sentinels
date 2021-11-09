@@ -1,22 +1,27 @@
-## Cloud DLP is a fully managed service designed to help you discover, classify, and protect your most sensitive data. It provides tools to classify, mask, tokenize, and transform sensitive elements to help you better manage the data that you collect, store, or use for business or analytics.
-
-
-In order to deploy DLP through terraform, below two policies need to be run successfully.
+### Policy file "threat_gcp_data_configuration_restriction.sentinel" is having code to deploy the policies as a code. In order to deploy DLP through terraform, below two policies need to be validated successfully.
 * Enforce jobs to have a trigger to ensure they run automatically.
 * Enforce that all jobs save their findings into a BQ dataset.
 
-### threat_gcp_data_configuration_restriction.sentinel file is being used to have both policies as a code.
-1. resourceTypesDLPJTMap
-2. resourceTypesDLPSFMap
+## Used Variables 
+* selected_node: It is being used locally to have information of node by passing the path.
+* messages: It is being used to hold the complete message of policies violation to show to the user.
 
-3. check_job_trigger
-4. check_save_findings
-5. Line# 92 && 113
+## Used Maps
+* resourceTypesDLPJTMap: This is the map, being used to have path of node for the respective gcp service for Job  Trigger policy. Here Key is having complete path of particular node.
 
+* resourceTypesDLPSFMap: This is the map, being used to have path of nodes for the respective gcp service for Save Finding policy. It is having two enteries with two keys "key" and "inspect_key". As per the policy, "inspect_job.0.actions.0.save_findings.0.output_config.0.table.0.dataset_id" needs to have appropriate value for the dataset_id.
+As per terraform, inspect_job is not required section, so "inspect_job" & "dataset_id" both need to be validated for null/empty.
 
-triggers is required for planning.
-schedule is not required for planning.
-recurrence_period_duration is not required for planning.
-recurrecne_period_duration with "" is fine for planning.
-recurrence_period_download with null is fine for planning.
-recurrence_period_download with "86400s" is perfect for sentinels.
+## Used Methods
+* check_job_trigger: This function is being used to validate the value of parameter "recurrence_period_duration". As per the policy, its value needs to be lied between 1 day to 60 days. It can not be empty/null and will be sufficed with 's'. If the policy won't be validated successfully, it will generate appropriate message to show the users. This function will have below 2-parameters:
+
+** Parameters
+1. address => The key inside of resource_changes section for particular GCP Resource in tfplan mock
+2. rc => The value of address key inside of resource_changes section for particular GCP Resource in tfplan mock
+
+* check_save_findings: This function is being used to validate the value of parameter "inspect_job.0.actions.0.save_findings.0.output_config.0.table.0.dataset_id". As per the policy, its value can not be null/empty and must be proper valid dataset_id. If the policy won't be validated successfully, it will generate appropriate message to show the users. This function will have below 2-parameters:
+
+** Parameters
+1. address => The key inside of resource_changes section for particular GCP Resource in tfplan mock
+2. rc => The value of address key inside of resource_changes section for particular GCP Resource in tfplan mock
+

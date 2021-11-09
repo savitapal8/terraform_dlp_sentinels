@@ -1,0 +1,10 @@
+{
+	"records": [
+		{
+			"key": "threat_gcp_data_configuration_restriction",
+			"source": "./threat_gcp_data_configuration_restriction.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/gcp/threat_gcp_data_configuration_restriction.sentinel"
+		}
+	]
+}
