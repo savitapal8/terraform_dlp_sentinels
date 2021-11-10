@@ -25,9 +25,11 @@ As per terraform, inspect_job is not required section, so "inspect_job" & "datas
 
     * Parameters
     
-|address | The key inside of resource_changes section for particular GCP Resource in tfplan mock |
+
+|address|The key inside of resource_changes section for particular GCP Resource in tfplan mock |
 |----|-----|-------|
-rc | The value of address key inside of resource_changes section for particular GCP Resource in tfplan mock |
+|rc|The value of address key inside of resource_changes section for particular GCP Resource in tfplan mock |
+
 |Name|Email|Address|
 |----|-----|-------|
 |John|john@example.com|Address1|
