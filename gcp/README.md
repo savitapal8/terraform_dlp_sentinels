@@ -1,13 +1,6 @@
-### List of Policies
-|Policy Id|Sentinel File Name|
-|----|-----|
-|GCP_DLP_TRIGGER|threat_gcp_data_configuration_restriction.sentinel|
-|GCP_DLP_SAVEFINDINGS|threat_gcp_data_configuration_restriction.sentinel|
-
-
 ### threat_gcp_data_configuration_restriction.sentinel
-* Enforce jobs to have a trigger to ensure they run automatically.
-* Enforce that all jobs save their findings into a BQ dataset.
+* **GCP_DLP_TRIGGER:** Enforce jobs to have a trigger to ensure they run automatically.
+* **GCP_DLP_SAVEFINDINGS**: Enforce that all jobs save their findings into a BQ dataset.
 
 #### Variables 
 |Name|Description|
