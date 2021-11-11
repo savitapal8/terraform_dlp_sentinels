@@ -14,13 +14,13 @@ resource "google_data_loss_prevention_job_trigger" "savita_demo_1" {
     }
   
   inspect_job {
-        inspect_template_name = "dlp_demo"
+        inspect_template_name = "projects/airline1-sabre-wolverine/locations/global/inspectTemplates/test_inspect_template"
         actions {
             save_findings {
                 output_config {
                     table {
-                        project_id = "xxxxxx-xxx-xxxxxxx"
-                        dataset_id = ""
+                        project_id = "airline1-sabre-wolverine"
+                        dataset_id = "dlp_demo"
                     }
                 }
             }

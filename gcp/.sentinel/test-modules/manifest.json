@@ -1,52 +1,10 @@
 {
 	"records": [
 		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_save_findings\\generic-functions",
-			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
-			"sourceSum": "",
-			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
-		},
-		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_trigger\\generic-functions",
-			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
-			"sourceSum": "",
-			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
-		},
-		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\failure-gcp_dlp_trigger\\generic-functions",
-			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
-			"sourceSum": "",
-			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
-		},
-		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\null-gcp_dlp_save_findings\\tfplan-functions",
-			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
-			"sourceSum": "",
-			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
-		},
-		{
 			"key": "test\\threat_gcp_data_configuration_restriction\\null-gcp_dlp_trigger\\generic-functions",
 			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
 			"sourceSum": "",
 			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
-		},
-		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_trigger\\tfplan-functions",
-			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
-			"sourceSum": "",
-			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
-		},
-		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\null-gcp_dlp_save_findings\\generic-functions",
-			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
-			"sourceSum": "",
-			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
-		},
-		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_save_findings\\tfplan-functions",
-			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
-			"sourceSum": "",
-			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
 		},
 		{
 			"key": "test\\threat_gcp_data_configuration_restriction\\failure-gcp_dlp_save_findings\\tfplan-functions",
@@ -61,16 +19,58 @@
 			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
 		},
 		{
-			"key": "test\\threat_gcp_data_configuration_restriction\\failure-gcp_dlp_trigger\\tfplan-functions",
+			"key": "test\\threat_gcp_data_configuration_restriction\\null-gcp_dlp_save_findings\\tfplan-functions",
 			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
 			"sourceSum": "",
 			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_save_findings\\generic-functions",
+			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
+		},
+		{
+			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_trigger\\tfplan-functions",
+			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_save_findings\\tfplan-functions",
+			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test\\threat_gcp_data_configuration_restriction\\null-gcp_dlp_save_findings\\generic-functions",
+			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
 		},
 		{
 			"key": "test\\threat_gcp_data_configuration_restriction\\null-gcp_dlp_trigger\\tfplan-functions",
 			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
 			"sourceSum": "",
 			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test\\threat_gcp_data_configuration_restriction\\success-gcp_dlp_trigger\\generic-functions",
+			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
+		},
+		{
+			"key": "test\\threat_gcp_data_configuration_restriction\\failure-gcp_dlp_trigger\\tfplan-functions",
+			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test\\threat_gcp_data_configuration_restriction\\failure-gcp_dlp_trigger\\generic-functions",
+			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_dlp_sentinels/common-functions/generic-functions/generic-functions.sentinel"
 		}
 	]
 }

@@ -72,7 +72,7 @@ resources = {
 				},
 			],
 			"parent": {
-				"constant_value": "airline1-sabre-wolverine",
+				"constant_value": "common",
 			},
 			"triggers": [
 				{
